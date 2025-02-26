@@ -244,10 +244,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 378692174}
-  gravityScale: 2
-  horizontalSpeed: 5
+  gravityScale: 40
+  horizontalSpeed: 10
   jumpSpeed: 10
-  isPress: 0
 --- !u!54 &378692174
 Rigidbody:
   m_ObjectHideFlags: 0

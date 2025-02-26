@@ -1,34 +1,28 @@
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
-{
+public class CharacterController : MonoBehaviour {
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float gravityScale;
-    [SerializeField] private float horizontalSpeed;
-    [SerializeField] private float jumpSpeed;
-    [SerializeField] private bool isPress;
+    [SerializeField] private float gravityScale = 9.81f;
+    [SerializeField] private float horizontalSpeed = 5f;
+    [SerializeField] private float jumpSpeed = 10f;
+    private bool isPress;
 
-
-    private void Start()
-    {
+    private void Awake() {
         rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
+        rb.useGravity = false; 
     }
 
-    private void Update()
-    {
-        rb.linearVelocity = new Vector3(horizontalSpeed, rb.linearVelocity.y, rb.linearVelocity.z);
-        
+    private void Update() {
+        rb.linearVelocity = new Vector3(horizontalSpeed, rb.linearVelocity.y, 0);
     }
-    private void FixedUpdate()
-    {
+
+    private void FixedUpdate() {
         isPress = Input.GetMouseButton(0);
-        if(!isPress){
+
+        if (!isPress) {
             rb.linearVelocity += Vector3.down * gravityScale * Time.fixedDeltaTime;
-        }
-        else{
-            rb.linearVelocity = new Vector3 (rb.linearVelocity.x, jumpSpeed, rb.linearVelocity.z);
+        } else {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpSpeed, 0);
         }
     }
-
 }
