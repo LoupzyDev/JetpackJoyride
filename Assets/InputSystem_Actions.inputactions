@@ -990,6 +990,116 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "GamePlay",
+            "id": "6e59be39-ee24-4ae4-8828-de7c1021eedf",
+            "actions": [
+                {
+                    "name": "Draw",
+                    "type": "Button",
+                    "id": "cd15ee22-e05e-4ccf-8162-31ad911bb984",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Erase",
+                    "type": "Button",
+                    "id": "fa8cf209-0924-4b13-9b07-a12df42d7ece",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Save",
+                    "type": "Button",
+                    "id": "808d0983-7734-4486-b6fb-43f0afc85cc8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RacoonJump",
+                    "type": "Button",
+                    "id": "d97f209f-b171-46f7-ba8a-931a5a9a87ff",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9ab9a05e-7efd-4874-b8e2-481284dddd25",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Draw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2228fa93-0d94-4a82-8a7f-9574cb9997a9",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Draw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "98e40d9c-7ea0-4df6-abcf-dd512a166fce",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Erase",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0e7db42-d752-44a5-9c69-92b74e62212a",
+                    "path": "<Keyboard>/m",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Save",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9f244f0-69c9-458b-ba0f-b117fb9ec5c7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RacoonJump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e68e03a7-92bb-418f-8ba6-94b2a6b28b96",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RacoonJump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
