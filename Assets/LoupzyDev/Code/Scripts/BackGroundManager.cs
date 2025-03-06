@@ -1,37 +1,36 @@
 using UnityEngine;
 
-public class BackGroundManager : MonoBehaviour
-{
-    [SerializeReference] private Camera mainCamera;
-    [SerializeReference] private float offset;
-    [SerializeReference] private float width;
+public class BackGroundManager : MonoBehaviour {
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private float width;
 
-    void Update()
-    {
-            Debug.Log("Mi transform es: "+ (transform.position.x + width));
-            Debug.Log("Camara transform es: " + (mainCamera.transform.position.x - mainCamera.orthographicSize * 2));
+    void Update() {
 
-        if (transform.position.x + width / 2 < mainCamera.transform.position.x - mainCamera.orthographicSize * 2)
-        {
+        float leftBoundary = GetCameraLeftBoundary();
+
+        Debug.Log("Posición del fondo: " + transform.position.x);
+        Debug.Log("Límite izquierdo de la cámara: " + leftBoundary);
+        if (transform.position.x + width / 2 < leftBoundary ) {
             Reposition();
         }
     }
 
-    public void Reposition()
-    {
+    private float GetCameraLeftBoundary() {
 
+        float distanceToBackground = Mathf.Abs(transform.position.z - mainCamera.transform.position.z);
+        float halfWidth = Mathf.Tan(mainCamera.fieldOfView * 0.5f * Mathf.Deg2Rad) * distanceToBackground * mainCamera.aspect;
+        return mainCamera.transform.position.x - halfWidth;
+    }
+
+    public void Reposition() {
         GameObject[] backgrounds = GameObject.FindGameObjectsWithTag("Background");
         float maxX = float.MinValue;
 
-        foreach (GameObject bg in backgrounds)
-        {
-            if (bg.transform.position.x > maxX)
-            {
+        foreach (GameObject bg in backgrounds) {
+            if (bg.transform.position.x > maxX) {
                 maxX = bg.transform.position.x;
             }
         }
-
-        transform.position = new Vector3(maxX + (width/2), transform.position.y, transform.position.z);
+        transform.position = new Vector3(maxX + width, transform.position.y, transform.position.z);
     }
 }
-
